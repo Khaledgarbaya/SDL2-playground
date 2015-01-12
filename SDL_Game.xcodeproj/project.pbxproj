@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		427326681A6459D900BE17F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 427326671A6459D900BE17F7 /* main.cpp */; };
+		42E5CB001A645C6C005B8D5C /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E5CAFF1A645C6C005B8D5C /* SDL2.framework */; };
+		42E5CB031A645D69005B8D5C /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42E5CB011A645D69005B8D5C /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		427326641A6459D900BE17F7 /* SDL_Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDL_Game; sourceTree = BUILT_PRODUCTS_DIR; };
 		427326671A6459D900BE17F7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		42E5CAFF1A645C6C005B8D5C /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		42E5CB011A645D69005B8D5C /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		42E5CB021A645D69005B8D5C /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E5CB001A645C6C005B8D5C /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +47,7 @@
 		4273265B1A6459D800BE17F7 = {
 			isa = PBXGroup;
 			children = (
+				42E5CAFF1A645C6C005B8D5C /* SDL2.framework */,
 				427326661A6459D900BE17F7 /* SDL_Game */,
 				427326651A6459D900BE17F7 /* Products */,
 			);
@@ -58,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				427326671A6459D900BE17F7 /* main.cpp */,
+				42E5CB011A645D69005B8D5C /* Game.cpp */,
+				42E5CB021A645D69005B8D5C /* Game.h */,
 			);
 			path = SDL_Game;
 			sourceTree = "<group>";
@@ -119,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				427326681A6459D900BE17F7 /* main.cpp in Sources */,
+				42E5CB031A645D69005B8D5C /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +212,11 @@
 		4273266C1A6459D900BE17F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks",
+					"~/Library/Frameworks/",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +224,11 @@
 		4273266D1A6459D900BE17F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks",
+					"~/Library/Frameworks/",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -232,6 +252,7 @@
 				4273266D1A6459D900BE17F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
