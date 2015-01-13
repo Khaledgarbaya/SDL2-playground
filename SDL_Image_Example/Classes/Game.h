@@ -28,6 +28,9 @@ public:
 private:
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
+    SDL_Texture* m_pTexture;
+    SDL_Rect m_sourceRectangle;// the first rectangle
+    SDL_Rect m_destinationRectangle;// another rectangle
     bool m_bRunning;
 };
 

@@ -20,6 +20,20 @@
                ReferencedContainer = "container:SDL_Game.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "427326631A6459D800BE17F7"
+               BuildableName = "SDL_Game"
+               BlueprintName = "SDL_Game"
+               ReferencedContainer = "container:SDL_Game_Image.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

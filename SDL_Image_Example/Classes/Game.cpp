@@ -15,6 +15,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0)
     {
         std::cout << "SDL init success\n";
+        
+        std::cout << "Loading texture"<<std::endl;
+        
+        //Steps Creating and SDL Texture
+        
         int flags = 0;
         if(fullscreen)
         {
@@ -30,8 +35,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
             if(m_pRenderer != 0) // renderer init success
             {
                 std::cout << "renderer creation success\n";
-                SDL_SetRenderDrawColor(m_pRenderer,
-                                       255,255,255,255);
+                SDL_SetRenderDrawColor(m_pRenderer, 0,0,0,255);
             } else {
                 std::cout << "renderer init fail\n";
                 return false; // renderer init fail
@@ -45,12 +49,50 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
         return false; // SDL init fail
     }
     std::cout << "init success\n";
+    //std::cout<< "SDL Base Path ::"<< SDL_GetBasePath() << std::endl;
+    //1.loading the image with return and SDL_Surface
+    SDL_Surface* pTempSurface = SDL_LoadBMP("assets/rider.bmp");
+    
+    if(pTempSurface == NULL)
+    {
+        std::cout<< "Error while loading the bitmap assets/rider.bmp, Error: "<< SDL_GetError()<< std::endl;
+    }
+    //2.Create a texture out of it
+    m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
+    
+    if(m_pTexture == NULL)
+    {
+        std::cout<< "Error while creating the texture, SDL_Error: "<< SDL_GetError()<< std::endl;
+    }
+    //3.Free the surface after creating the texture
+    SDL_FreeSurface(pTempSurface);
+    
+    //Displaying the texture
+    
+    /// Query the created texture for width and height
+    SDL_QueryTexture(m_pTexture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+    m_sourceRectangle.w = 50;
+    m_sourceRectangle.h = 50;
+    ///set where we want to render the texture on the wondow
+    m_sourceRectangle.x = 0;
+    m_sourceRectangle.y = 0;
+    m_destinationRectangle.x = 100;
+    m_destinationRectangle.y = 100;
+    
+    m_destinationRectangle.w = m_sourceRectangle.w;
+    m_destinationRectangle.h = m_sourceRectangle.h;
+    
+    ///Render to the screen in the render method
+    
     m_bRunning = true; // everything inited successfully,start the main loop
     return true;
 }
 void Game::render()
 {
     SDL_RenderClear(m_pRenderer); // clear the renderer to the draw color
+    ///all the stuff you wanna render goes here
+    SDL_RenderCopy(m_pRenderer, m_pTexture, NULL, NULL);
+    
     SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
 void Game::handleEvents()

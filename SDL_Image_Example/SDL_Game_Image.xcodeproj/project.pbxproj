@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4270D0B11A655D5C008F3EF4 /* rider.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4270D0B01A6558D5008F3EF4 /* rider.bmp */; };
 		42C1EDB51A64692100FFC0DB /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42C1EDB21A64692100FFC0DB /* Game.cpp */; };
 		42C1EDB61A64692100FFC0DB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42C1EDB41A64692100FFC0DB /* main.cpp */; };
 		42E5CB001A645C6C005B8D5C /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E5CAFF1A645C6C005B8D5C /* SDL2.framework */; };
@@ -15,17 +16,18 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		427326621A6459D800BE17F7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = assets;
+			dstSubfolderSpec = 16;
 			files = (
+				4270D0B11A655D5C008F3EF4 /* rider.bmp in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4270D0AE1A6551A3008F3EF4 /* rider.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = rider.bmp; sourceTree = "<group>"; };
+		4270D0B01A6558D5008F3EF4 /* rider.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = rider.bmp; sourceTree = "<group>"; };
 		427326641A6459D900BE17F7 /* SDL_Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDL_Game; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C1EDB21A64692100FFC0DB /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		42C1EDB31A64692100FFC0DB /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -45,10 +47,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4270D0AD1A65518E008F3EF4 /* assets */ = {
+		4270D0AF1A6558D5008F3EF4 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				4270D0AE1A6551A3008F3EF4 /* rider.bmp */,
+				4270D0B01A6558D5008F3EF4 /* rider.bmp */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -56,7 +58,6 @@
 		4273265B1A6459D800BE17F7 = {
 			isa = PBXGroup;
 			children = (
-				4270D0AD1A65518E008F3EF4 /* assets */,
 				42E5CAFF1A645C6C005B8D5C /* SDL2.framework */,
 				427326651A6459D900BE17F7 /* Products */,
 				42C1EDB11A6468F000FFC0DB /* Classes */,
@@ -74,6 +75,7 @@
 		42C1EDB11A6468F000FFC0DB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4270D0AF1A6558D5008F3EF4 /* assets */,
 				42C1EDB71A64694500FFC0DB /* Game */,
 				42C1EDB41A64692100FFC0DB /* main.cpp */,
 			);
