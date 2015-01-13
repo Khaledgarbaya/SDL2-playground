@@ -1,1 +1,1 @@
-# SDL2 Game Starting Point
+# SDL2 Sample Using Images
