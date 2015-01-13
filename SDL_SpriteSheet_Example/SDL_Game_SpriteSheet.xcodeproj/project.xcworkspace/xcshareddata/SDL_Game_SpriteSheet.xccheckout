@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5EFA2F4C-DDE9-4C40-87AC-5138A00D5992</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SDL_Game_SpriteSheet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4A82D7D001228DB4A32F98B9ED5C8709EEEF5B43</key>
+		<string>https://github.com/Khaledgarbaya/SDL2-playground.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SDL_SpriteSheet_Example/SDL_Game_SpriteSheet.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4A82D7D001228DB4A32F98B9ED5C8709EEEF5B43</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Khaledgarbaya/SDL2-playground.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4A82D7D001228DB4A32F98B9ED5C8709EEEF5B43</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4A82D7D001228DB4A32F98B9ED5C8709EEEF5B43</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SDL2-playground</string>
+		</dict>
+	</array>
+</dict>
+</plist>
