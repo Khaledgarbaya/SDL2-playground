@@ -18,7 +18,7 @@ public:
     ~Game() {}
     // simply set the running variable to true
     bool init(const char* title, int xpos, int ypos, int width, int
-              height, int flags);
+              height, bool fullscreen);
     void render();
     void update(){}
     void handleEvents();
