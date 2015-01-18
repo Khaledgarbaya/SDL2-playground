@@ -7,7 +7,9 @@
 //
 
 #include "Game.h"
-typedef TextureManager TheTextureManager;
+
+Game* Game::s_pInstance = 0;
+
 bool Game::init(const char* title, int xpos, int ypos, int width,
                 int height, bool fullscreen)
 {
@@ -50,13 +52,13 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
     }
     std::cout << "init success\n";
     //std::cout<< "SDL Base Path ::"<< SDL_GetBasePath() << std::endl;
-    
-    // to load
-    if(!TheTextureManager::Instance()->load("assets/animate-alpha.png",
-                                            "animate", m_pRenderer))
+    if(!TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer))
     {
         return false;
     }
+    // to load
+    m_gameObjects.push_back(new Player(new LoaderParams(10, 100, 128, 82, "animate")));
+    m_gameObjects.push_back(new Enemy(new LoaderParams(10, 300, 128, 82, "animate")));
     
     m_bRunning = true; // everything inited successfully,start the main loop
     return true;
@@ -68,10 +70,11 @@ void Game::render()
     /// render non flipped texture
     //SDL_RenderCopy(m_pRenderer, m_pTexture, &m_sourceRectangle, &m_destinationRectangle);
     ///Render flipped texture
-    TheTextureManager::Instance()->draw("animate", 0,0, 128, 82,
-                                        m_pRenderer);
-    TheTextureManager::Instance()->drawFrame("animate", 100,100, 128, 82,
-                               1, m_currentFrame, m_pRenderer);
+    // loop through our objects and draw them
+    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->draw();
+    }
     
     SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
@@ -108,5 +111,9 @@ void Game::clean()
 }
 void Game::update()
 {
-    m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
+    // loop through and update our objects
+    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->update();
+    }
 }

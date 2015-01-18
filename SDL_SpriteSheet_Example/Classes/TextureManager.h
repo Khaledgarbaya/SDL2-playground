@@ -39,5 +39,5 @@ public:
     TextureManager() {}
     std::map<std::string, SDL_Texture*> m_textureMap;
 };
-
+typedef TextureManager TheTextureManager;
 #endif /* defined(__SDL_Game_SpriteSheet__TextureManager__) */
