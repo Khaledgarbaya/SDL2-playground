@@ -21,7 +21,8 @@ public:
     float length();
     
     void normalize();
-    ///Operators overloading ------------------------------------------------------------
+    
+    ///----------------------------------------------Operators overloading ------------------------------------------------------------
     /// + and += operators
     Vector2D operator+(const Vector2D& v2) const;
     Vector2D& operator+=(const Vector2D& v2);

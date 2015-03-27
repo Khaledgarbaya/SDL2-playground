@@ -7,7 +7,8 @@
 //
 
 #include "Game.h"
-
+#include "MenuState.h"
+#include "InputHandler.h"
 Game* Game::s_pInstance = 0;
 
 bool Game::init(const char* title, int xpos, int ypos, int width,
@@ -60,7 +61,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
     m_gameObjects.push_back(new Player(new LoaderParams(10, 100, 128, 82, "animate")));
     m_gameObjects.push_back(new Enemy(new LoaderParams(10, 300, 128, 82, "animate")));
     
+    m_pGameStateMachine = new GameStateMachine();
+    m_pGameStateMachine->changeState(new MenuState());
+    
     m_bRunning = true; // everything inited successfully,start the main loop
+    
     return true;
 }
 void Game::render()
@@ -80,33 +85,15 @@ void Game::render()
 }
 void Game::handleEvents()
 {
-    SDL_Event event;
-    if(SDL_PollEvent(&event))
-    {
-        switch (event.type)
-        {
-            case SDL_QUIT:
-                m_bRunning = false;
-                break;
-            // keyboard Events
-            case SDL_KEYUP :
-                switch (event.key.keysym.sym)
-                {
-                    case SDLK_q:
-                        m_bRunning = false;
-                        break;
-                }
-                break;
-            default:
-            break;
-        }
-    }
+    TheInputHandler::Instance()->update();
+    
 }
 void Game::clean()
 {
     std::cout << "cleaning game\n";
     SDL_DestroyWindow(m_pWindow);
     SDL_DestroyRenderer(m_pRenderer);
+    delete m_pGameStateMachine;
     SDL_Quit();
 }
 void Game::update()

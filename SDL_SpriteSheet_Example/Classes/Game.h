@@ -15,6 +15,7 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "GameStateMachine.h"
 class Game
 {
 public:
@@ -52,6 +53,8 @@ private:
     SDL_Renderer* m_pRenderer;
     int m_currentFrame;
     bool m_bRunning;
+    
+    GameStateMachine* m_pGameStateMachine;
 };
 typedef  Game TheGame;
 #endif /* defined(__SDL_Game__Game__) */
